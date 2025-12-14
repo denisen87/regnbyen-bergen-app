@@ -1,0 +1,21 @@
+{
+  "name": "Regnbyen Bergen AS",
+  "short_name": "Regnbyen",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0b5ed7",
+  "icons": [
+    {
+      "src": "public/logo/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "public/logo/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

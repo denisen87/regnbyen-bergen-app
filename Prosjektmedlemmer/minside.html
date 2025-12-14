@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Min side – Regnbyen Bergen AS</title>
+    <link rel="stylesheet" href="khader.css">
+</head>
+<body>
+
+    <!-- Skip link for accessibility -->
+    <a href="#innhold" class="skip-link">Hopp til innhold</a>
+
+    <!-- HEADER -->
+    <header class="site-header" role="banner">
+        <div class="container header-inner">
+            <a href="public/index.html" aria-label="Gå til hjemmesiden">
+    
+            </a>
+
+            <!-- Mobile menu toggle -->
+            <button class="menu-toggle" aria-label="Åpne meny" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="main-nav" aria-label="Hovedmeny">
+                <ul class="navbar">
+                    <li><a href="../index.html">Hjem</a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN -->
+    <main id="innhold" class="container" role="main" style="margin-top:2rem;">
+        <h1>Hei, jeg er Khader</h1>
+        <p>Her er en liten presentasjon av meg.</p>
+
+        <!-- Profil -->
+        <table class="profile-table" role="table" aria-label="Profil">
+            <tr>
+                <td class="photo-cell" style="width:260px;">
+                    <figure class="profile-figure">
+                        <img src="khader.jpg" alt="Bilde av Khader" class="profile-photo" loading="lazy">
+                        <figcaption>Khader Daraghma</figcaption>
+                    </figure>
+                </td>
+                <td>
+                    <section class="about">
+                        <h2>Om meg</h2>
+                        <p>
+                            Jeg heter Khader, og jeg kommer fra Palestina. Jeg er en positiv og nysgjerrig person som liker å lære nye ting og utvikle meg både faglig og personlig.
+                            Jeg interesserer meg for teknologi, problemløsing og kreativ tenkning, og jeg liker å finne nye måter å forstå hvordan ting fungerer på.
+                        </p>
+                        <p>
+                            Jeg verdsetter samarbeid og liker å bidra til gode løsninger, enten det handler om skoleprosjekter, arbeid eller personlige mål.
+                            Jeg tror på at man alltid kan lære noe nytt – og det er det som motiverer meg hver dag.
+                        </p>
+                    </section>
+                </td>
+            </tr>
+        </table>
+
+        <!-- Fakta -->
+        <h2 style="margin-top:2rem;">Fakta</h2>
+        <table class="info-table" role="table" aria-label="Informasjon">
+            <thead>
+                <tr>
+                    <th>Felt</th>
+                    <th>Detaljer</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Født</td>
+                    <td>20/10/2004</td>
+                </tr>
+                <tr>
+                    <td>Utdanning</td>
+                    <td>Dataingeniør</td>
+                </tr>
+                <tr>
+                    <td>Ferdigheter</td>
+                    <td>Grunnleggende: HTML/CSS, Java, Python, SQL</td>
+                </tr>
+                <tr>
+                    <td>Språk</td>
+                    <td>Arabisk, norsk, engelsk</td>
+                </tr>
+                <tr>
+                    <td>Kontakt</td>
+                    <td><a href="mailto:khadermdaraghma@gmail.com">khadermdaraghma@gmail.com</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-about">
+                    <p>&copy; <span id="year">2025</span> Regnbyen Bergen A/S</p>
+                    <p style="font-size: 0.9rem; color: #b0b0b0; line-height: 1.7;">
+                        Din guide til å leve godt i Bergen – tips om klær, bolig, bil og aktiviteter for alle årstider.
+                    </p>
+                </div>
+
+                <div class="footer-nav-section">
+                    <h3>Snarveier</h3>
+                    <ul class="footer-menu">
+                        <li><a href="public/om-oss.html">Om oss</a></li>
+                        <li><a href="public/klaer.html">Klær & sko</a></li>
+                        <li><a href="public/hus.html">Hus</a></li>
+                        <li><a href="public/bil.html">Bil</a></li>
+                        <li><a href="public/aktiviteter.html">Aktiviteter</a></li>
+                        <li><a href="public/kontakt.html">Kontakt</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-newsletter">
+                    <h3>Motta våre tips</h3>
+                    <p>Få de beste rådene for regnfulle dager direkte i innboksen din.</p>
+                    <form class="newsletter-form" action="#" method="post" aria-label="Nyhetsbrev påmelding">
+                        <input type="email" class="newsletter-input" placeholder="Din e-postadresse" required aria-label="E-postadresse" />
+                        <button type="submit" class="newsletter-btn">Abonner</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Regnbyen Bergen A/S. Alle rettigheter reservert. 
+                    <a href="tilgjengelighet.html" style="margin-left: 1rem;">Tilgjengelighet</a> | 
+                    <a href="personvern.html">Personvern</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Enkel meny-funksjon -->
+    <script>
+        const toggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('.main-nav');
+
+        toggle.addEventListener('click', () => {
+            nav.classList.toggle('open');
+            const expanded = nav.classList.contains('open');
+            toggle.setAttribute('aria-expanded', expanded);
+        });
+    </script>
+</body>
+</html>
