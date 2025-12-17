@@ -68,7 +68,7 @@ figure {
   display: block;
   width: min(100%, 800px);
   aspect-ratio: 4 / 2;   /* eller 4/3 hvis det passer bedre */
-  height: auto;
+  height: 420px;
   object-fit: contain;
   margin: 0 auto;
   background: #fff;       /* gjør at tomrom ser bevisst ut */
