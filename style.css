@@ -64,13 +64,17 @@ figure {
 
 /* Ensurer like bildeflater for skjermbilder på python-siden */
 .responsive-img {
-    display: block;
-    width: 100%;            /* skalerer innenfor container */
-    max-width: 500px;       /* lik maks-bredde for begge */
-    height: 420px;          /* fast høyde for lik størrelse */
-    object-fit: contain;    /* bevar proporsjoner uten å beskjære */
-    margin-left: auto;
-    margin-right: auto;
+.responsive-img{
+  display: block;
+  width: min(100%, 900px);
+  aspect-ratio: 16 / 9;   /* eller 4/3 hvis det passer bedre */
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto;
+  background: #fff;       /* gjør at tomrom ser bevisst ut */
+  border-radius: 12px;
+}
+
 }
 
 figcaption {
