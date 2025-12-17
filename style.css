@@ -58,8 +58,8 @@ section {
 }
 
 figure {
-    margin: 1.5em 0;
-    text-align: center;
+  margin: 2rem auto;
+  max-width: 900px;
 }
 
 /* Ensurer like bildeflater for skjermbilder på python-siden */
