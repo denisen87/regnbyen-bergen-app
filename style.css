@@ -66,8 +66,8 @@ figure {
 .responsive-img {
 .responsive-img{
   display: block;
-  width: min(100%, 900px);
-  aspect-ratio: 16 / 9;   /* eller 4/3 hvis det passer bedre */
+  width: min(100%, 800px);
+  aspect-ratio: 4 / 3;   /* eller 4/3 hvis det passer bedre */
   height: auto;
   object-fit: contain;
   margin: 0 auto;
