@@ -12,15 +12,17 @@
     color: #222;
     text-decoration: none;
 }
-
+/* skjermbildet pyton side */
 .responsive-img {
   display: block;
   width: 100%;
   max-width: 900px;
-  height: auto;          /* ✅ viktig */
+  height: auto;
+  max-height: 60vh;      /* ✅ max 60% av skjermen */
   object-fit: contain;
   margin: 0 auto;
 }
+
 
 
 h1 {
