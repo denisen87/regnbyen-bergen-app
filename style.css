@@ -66,7 +66,7 @@ figure {
 .responsive-img {
     display: block;
     width: 100%;            /* skalerer innenfor container */
-    max-width: 900px;       /* lik maks-bredde for begge */
+    max-width: 800px;       /* lik maks-bredde for begge */
     height: 420px;          /* fast høyde for lik størrelse */
     object-fit: contain;    /* bevar proporsjoner uten å beskjære */
     margin-left: auto;
