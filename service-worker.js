@@ -8,6 +8,7 @@ const ASSETS = [
   "./main.js",
   "./manifest.webmanifest",
   "./public/logo/logo.png",
+  "./chatbot.js",
 
   // Legg til de andre sidene dine:
   "./om-oss.html",
@@ -17,7 +18,9 @@ const ASSETS = [
   "./aktiviteter.html",
   "./kontakt.html",
   "./sosialearagementer.html",
-  "./python.html"
+  "./python.html",
+  "./chat.html"
+
 ];
 
 self.addEventListener("install", (event) => {
