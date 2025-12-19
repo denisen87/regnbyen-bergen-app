@@ -19,7 +19,7 @@ const ASSETS = [
   "./kontakt.html",
   "./sosialearagementer.html",
   "./python.html",
-  "./chat.html"
+  "./chatbot.html"
 
 ];
 
