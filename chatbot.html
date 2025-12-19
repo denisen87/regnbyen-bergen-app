@@ -3,46 +3,55 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chatbot – Regnbyen</title>
+  <title>Chatbot – Regnbyen Bergen AS</title>
+
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#0b5ed7">
+  <link rel="icon" href="public/logo/logo.png">
+
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
 
-              <nav aria-label="Hovedmeny">
-              <ul class="navbar">
-                  <li><a href="index.html">Hjem</a></li>
-                  <li><a href="om-oss.html">Om prosjektet</a></li>
-                  <li><a href="klaer.html">Klær &amp; sko</a></li>
-                  <li><a class="active" href="hus.html" aria-current="page">Hus</a></li>
-                  <li><a href="bil.html">Bil</a></li>
-                  <li><a href="sosialearagementer.html">Sosialegrupper</a></li>
-                  <li><a href="aktiviteter.html">Aktiviteter</a></li>
-                  <li><a href="kontakt.html">Kontakt</a></li>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" aria-label="Gå til hjemmesiden">
+        <img src="public/logo/logo.png" alt="Regnbyen Bergen AS Logo" class="logo" loading="eager" />
+      </a>
 
-              </ul>
-          </nav>
+      <button class="menu-toggle" aria-label="Åpne meny" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <a href="index.html"><img src="public/logo/logo.png" class="logo" alt="Logo"></a>
-    <nav><ul class="navbar">
-      <li><a href="index.html">Hjem</a></li>
-      <li><a class="active" href="chat.html">Chatbot</a></li>
-    </ul></nav>
-  </div>
-</header>
+      <nav aria-label="Hovedmeny">
+        <ul class="navbar">
+          <li><a href="index.html">Hjem</a></li>
+          <li><a href="om-oss.html">Om prosjektet</a></li>
+          <li><a href="klaer.html">Klær &amp; sko</a></li>
+          <li><a href="hus.html">Hus</a></li>
+          <li><a href="bil.html">Bil</a></li>
+          <li><a href="sosialearagementer.html">Sosialegrupper</a></li>
+          <li><a href="aktiviteter.html">Aktiviteter</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+          <li><a class="active" href="chat.html" aria-current="page">Chatbot</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-<main class="container" style="margin-top:40px;">
-  <h1>Regnbyen Chatbot</h1>
+  <main class="container" style="margin-top:40px;">
+    <h1>Regnbyen Chatbot</h1>
 
-  <div id="chatBox" style="border:1px solid #ddd; border-radius:12px; padding:16px; height:360px; overflow:auto;"></div>
+    <div id="chatBox" style="border:1px solid #ddd; border-radius:12px; padding:16px; height:360px; overflow:auto;"></div>
 
-  <form id="chatForm" style="display:flex; gap:10px; margin-top:12px;">
-    <input id="chatInput" type="text" placeholder="Skriv et spørsmål…" style="flex:1; padding:12px; border-radius:10px; border:1px solid #ccc;">
-    <button class="btn" type="submit">Send</button>
-  </form>
-</main>
+    <form id="chatForm" style="display:flex; gap:10px; margin-top:12px;">
+      <input id="chatInput" type="text" placeholder="Skriv et spørsmål…" style="flex:1; padding:12px; border-radius:10px; border:1px solid #ccc;">
+      <button class="btn" type="submit">Send</button>
+    </form>
+  </main>
 
-<script src="chatbot.js"></script>
+  <script src="main.js"></script>
+  <script src="chatbot.js"></script>
 </body>
 </html>
