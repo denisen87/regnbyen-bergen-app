@@ -2,6 +2,18 @@ const chatBox = document.getElementById("chatBox");
 const chatForm = document.getElementById("chatForm");
 const chatInput = document.getElementById("chatInput");
 
+const knowledge = [
+  {
+    keywords: ["hei", "hallo", "god dag"],
+    answer: "Hei! Jeg er Regnbyen-chatboten 🌧️"
+  },
+  {
+    keywords: ["paraply"],
+    answer: "Ta med paraply hvis det er mer enn 3–4 mm nedbør."
+  }
+];
+
+
 function addMessage(text, sender) {
   const msg = document.createElement("div");
   msg.style.marginBottom = "8px";
