@@ -1,4 +1,4 @@
-const CACHE_NAME = 'regnbyen-cache-v5';
+const CACHE_NAME = 'regnbyen-cache-v6';
 
 // Legg inn de viktigste sidene/filene for offline.
 const ASSETS = [
