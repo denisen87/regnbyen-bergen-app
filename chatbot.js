@@ -5,11 +5,12 @@ const chatInput = document.getElementById("chatInput");
 const knowledge = [
   {
     keywords: ["hei", "hallo", "god dag", "hey", "hi", "hvem er du", "hvem snakker eg med?", "hvem der?"  ],
-    answer: "Hei! Jeg er Regnbyen-chatboten 🌧️"
+    answer: "Hei! Jeg er Regnbyen-chatboten, Spør meg om regn, klær, hus, bil eller aktiviteter 🌧️"
   },
   {
     keywords: ["paraply", "regn", "uvær", "vær", "nedbør"],
-    answer: "Ta med paraply hvis det er mer enn 3–4 mm nedbør."
+    answer: "Ta med paraply hvis det er mer enn 3–4 mm nedbør, Vil du at jeg skal forklare hva mm betyr?.",
+    followUp: "explain_mm"
   },
   { keywords: ["åpningstider", "når er dere åpne", "når har dere åpent", "åpent"],
     answer: "Regnbyen er åpen fra 10:00 til 18:00 alle dager."
@@ -18,7 +19,8 @@ const knowledge = [
     answer: "Du kan parkere på Regnbyen."
   },
   { keywords: ["klær", "tøy", "antrekk", "påkledning"],
-    answer: "Vi anbefaler vanntette klær og sko."
+    answer: "Vi anbefaler vanntette klær og sko, Vil du ha tips til 'billig' eller 'best kvalitet'?.",
+    followUp: "clothing_tips"
   },
   { keywords: ["aktiviteter", "ting å gjøre", "underholdning", "moro"],     
     answer: "Vi har mange aktiviteter, inkludert regnkunstverksted og vanntesting."
