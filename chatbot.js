@@ -69,7 +69,7 @@ const knowledge = [
   },
   { keywords: ["skole", "utdanning", "skolebesøk"],
     answer: "Vi tilbyr spesialtilpassede skolebesøk og utdanningsprogrammer."
-  }
+  },
   { keywords: ["tilgjengelighet", "rullestol", "funksjonshemmet"],
     answer: "Regnbyen er fullt tilgjengelig for rullestolbrukere og har fasiliteter for funksjonshemmede."
   },
