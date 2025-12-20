@@ -133,38 +133,156 @@ const knowledge = [
   },  
 ];
 
-function getAnswer(userText) {
-  const text = userText.toLowerCase();
+/**
+ * 2) MINNE / KONTEKST
+ * Vi bruker en enkel 'state' for oppfølgingsspørsmål.
+ */
+let state = {
+  mode: null,        // f.eks. "clothes_budget"
+  lastTopic: null
+};
 
-  for (const item of knowledge) {
-    for (const keyword of item.keywords) {
-      if (text.includes(keyword)) {
-        return item.answer;
-      }
-    }
-  }
+let history = []; // enkel historikk i minne
 
-  return "Det vet jeg dessverre ikke ennå 🙂";
+/**
+ * 3) NORMALISERING AV TEKST
+ * - lower case
+ * - fjerner tegn
+ * - rydder mellomrom
+ */
+function normalize(text) {
+  return text
+    .toLowerCase()
+    .replace(/[!?.,:;()"]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
+/**
+ * 4) "SMART MATCH": scorer hver knowledge-item basert på antall treff.
+ * Returnerer beste match hvis score > 0
+ */
+function getBestMatch(text) {
+  let best = { item: null, score: 0 };
+
+  for (const item of knowledge) {
+    let score = 0;
+    for (const keyword of item.keywords) {
+      const k = normalize(keyword);
+      // gi litt høyere score hvis keyword er en frase (inneholder mellomrom)
+      const weight = k.includes(" ") ? 2 : 1;
+
+      if (text.includes(k)) score += weight;
+    }
+
+    if (score > best.score) best = { item, score };
+  }
+
+  return best.score > 0 ? best.item : null;
+}
+
+/**
+ * 5) HÅNDTER MODUS (oppfølgingsspørsmål)
+ */
+function handleMode(text) {
+  if (state.mode === "explain_mm") {
+    state.mode = null;
+    if (text.includes("ja")) return "Kort sagt: mm = hvor mye regn som faller. 1 mm ≈ 1 liter per m².";
+    if (text.includes("nei")) return "Skjønner! Spør om noe annet når du vil 🙂";
+    return "Svar gjerne 'ja' eller 'nei' 🙂";
+  }
+
+  if (state.mode === "clothes_budget") {
+    state.mode = null;
+    if (text.includes("billig")) {
+      return "Billig-tips: regnbukse + rimelig skalljakke + ull innerst. Fokus: vanntett og vindtett.";
+    }
+    if (text.includes("best") || text.includes("kvalitet")) {
+      return "Best kvalitet: 3-lags skalljakke (Gore-Tex/tilsvarende), gode sømmer + impregnering. Ull innerst.";
+    }
+    return "Vil du ha 'billig' eller 'best kvalitet'? 🙂";
+  }
+
+  if (state.mode === "activity_type") {
+    state.mode = null;
+    if (text.includes("inn")) return "Innendørs: VilVite, museum, kino, escape room, kafeer.";
+    if (text.includes("ute") || text.includes("utendørs")) return "Utendørs: tur i regntøy, Fløyen/Byfjellene – men sjekk vind + nedbør først.";
+    return "Vil du ha 'innendørs' eller 'utendørs'? 🙂";
+  }
+
+  return null;
+}
+
+/**
+ * 6) KOMMANDOER
+ */
+function handleCommands(text) {
+  if (text === "/clear") {
+    chatBox.innerHTML = "";
+    history = [];
+    return "Ryddet chatten ✅";
+  }
+  if (text === "/history") {
+    if (history.length === 0) return "Ingen historikk ennå 🙂";
+    return "Historikk:\n- " + history.slice(-6).join("\n- ");
+  }
+  return null;
+}
+
+/**
+ * 7) FÅ SVAR
+ */
+function getAnswer(userText) {
+  const text = normalize(userText);
+
+  // Kommandoer først
+  const commandAnswer = handleCommands(text);
+  if (commandAnswer) return commandAnswer;
+
+  // Hvis vi er i en "modus" (oppfølgingsspørsmål)
+  const modeAnswer = handleMode(text);
+  if (modeAnswer) return modeAnswer;
+
+  // Finn beste match i knowledge
+  const match = getBestMatch(text);
+  if (!match) return "Det vet jeg dessverre ikke ennå 🙂 Prøv 'paraply', 'klær' eller 'aktiviteter'.";
+  
+  state.lastTopic = match.keywords[0];
+
+  // sett follow-up mode hvis finnes
+  if (match.followUp) state.mode = match.followUp;
+
+  // støtte for answer som funksjon senere
+  if (typeof match.answer === "function") return match.answer(text);
+
+  return match.answer;
+}
+
+/**
+ * 8) VIS MELDINGER
+ */
 function addMessage(text, sender) {
   const msg = document.createElement("div");
   msg.style.marginBottom = "8px";
-  msg.innerHTML = `<strong>${sender}:</strong> ${text}`;
+  msg.innerHTML = `<strong>${sender}:</strong> ${text.replace(/\n/g, "<br>")}`;
   chatBox.appendChild(msg);
   chatBox.scrollTop = chatBox.scrollHeight;
 }
 
+/**
+ * 9) SEND MELDING
+ */
 chatForm.addEventListener("submit", (e) => {
   e.preventDefault();
-
   const text = chatInput.value.trim();
   if (!text) return;
 
   addMessage(text, "Du");
+  history.push("Du: " + text);
   chatInput.value = "";
 
   const svar = getAnswer(text);
+  history.push("Stig: " + svar);
 
-  setTimeout(() => addMessage(svar, "Stig 🤖"), 400);
+  setTimeout(() => addMessage(svar, "Stig 🤖"), 350);
 });
