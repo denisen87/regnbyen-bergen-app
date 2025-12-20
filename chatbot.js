@@ -68,6 +68,67 @@ const knowledge = [
   { keywords: ["skole", "utdanning", "skolebesøk"],
     answer: "Vi tilbyr spesialtilpassede skolebesøk og utdanningsprogrammer."
   }
+  { keywords: ["tilgjengelighet", "rullestol", "funksjonshemmet"],
+    answer: "Regnbyen er fullt tilgjengelig for rullestolbrukere og har fasiliteter for funksjonshemmede."
+  },
+  { keywords: ["parkering", "bilparkering", "parkere"],
+    answer: "Vi har gratis parkering tilgjengelig for våre besøkende."
+  },
+  { keywords: ["offentlig transport", "buss", "tog", "transport"],
+    answer: "Regnbyen er lett tilgjengelig med offentlig transport, inkludert busser og tog."
+  },
+  { keywords: ["arrangementskalender", "hendelser", "events"],
+    answer: "Du kan finne vår arrangementskalender på nettsiden vår for oppdateringer om kommende hendelser."
+  },
+  { keywords: ["sikkerhet", "trygghet", "sikkerhetsprosedyrer"],
+    answer: "Vi prioriterer sikkerheten til våre besøkende og har strenge sikkerhetsprosedyrer på plass."
+  },
+  { keywords: ["værmelding", "vær", "regnprognose"],
+    answer: "Du kan sjekke den siste værmeldingen på vår nettside for å planlegge besøket ditt."
+  },
+  { keywords: ["gavekort", "gavekort kjøp", "gavekort informasjon"],
+    answer: "Du kan kjøpe gavekort på nettsiden vår." 
+  },
+  {
+    keywords: ["medlemskap", "bli medlem", "medlemsfordeler"],
+    answer: "Bli medlem i Regnbyen for eksklusive fordeler og oppdateringer!"
+  },
+  { keywords: ["frakt", "levering", "forsendelse"],
+    answer: "Vi tilbyr frakt og levering for varer kjøpt i vår nettbutikk."
+  },
+  { keywords: ["tilbakemelding", "feedback", "kommentarer"],
+    answer: "Vi setter pris på tilbakemeldinger! Vennligst send dine kommentarer til oss via e-post."
+  },
+  { keywords: ["personvern", "data", "cookies"],
+    answer: "Les vår personvernerklæring på nettsiden for informasjon om hvordan vi håndterer data og cookies."
+  },
+  { keywords: ["karriere", "jobber", "stillinger"],
+    answer: "Sjekk vår karriereside for ledige stillinger og muligheter til å jobbe med oss."
+  },
+  { keywords: ["sponsing", "samarbeid", "partnere"],
+    answer: "Vi er alltid åpne for sponsing og samarbeid. Kontakt oss for mer informasjon."
+  },
+  { keywords: ["nyheter", "oppdateringer", "pressemeldinger"],
+    answer: "Hold deg oppdatert med de siste nyhetene og pressemeldingene på vår nettside."
+  },
+  { keywords: ["FAQ", "ofte stilte spørsmål", "hjelp"],
+    answer: "Besøk vår FAQ-side for svar på ofte stilte spørsmål."
+  },
+  { keywords: ["donasjoner", "støtte", "bidra"],
+    answer: "Støtt Regnbyen ved å donere via vår nettside."
+  },
+  { keywords: ["friluftsområder", "parker", "utendørs"],
+    answer: "Utforsk våre vakre friluftsområder og parker rundt Regnbyen."
+  },
+  { keywords: ["kunstutstillinger", "galleri", "kunst"],
+    answer: "Vi har regelmessige kunstutstillinger i vårt galleri, fokusert på regn og vann."
+  },
+  { keywords: ["workshops", "kurs", "læring"],
+    answer: "Delta i våre workshops og kurs for å lære mer om regnrelaterte emner."
+  },
+  { keywords: ["familieaktiviteter", "barn", "familie"],
+    answer: "Regnbyen tilbyr mange familievennlige aktiviteter som barn vil elske!"
+  },  
 ];
 
 function getAnswer(userText) {
