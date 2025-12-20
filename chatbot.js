@@ -4,11 +4,11 @@ const chatInput = document.getElementById("chatInput");
 
 const knowledge = [
   {
-    keywords: ["hei", "hallo", "god dag"],
+    keywords: ["hei", "hallo", "god dag", "hey", "hi", "hvem er du", "hvem snakker eg med?", "hvem der?"  ],
     answer: "Hei! Jeg er Regnbyen-chatboten 🌧️"
   },
   {
-    keywords: ["paraply", "regn"],
+    keywords: ["paraply", "regn", "uvær", "vær", "nedbør"],
     answer: "Ta med paraply hvis det er mer enn 3–4 mm nedbør."
   }
 ];
