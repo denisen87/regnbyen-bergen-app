@@ -129,7 +129,8 @@ const knowledge = [
     answer: "Delta i våre workshops og kurs for å lære mer om regnrelaterte emner."
   },
   { keywords: ["familieaktiviteter", "barn", "familie"],
-    answer: "Regnbyen tilbyr mange familievennlige aktiviteter som barn vil elske!"
+    answer: "Regnbyen tilbyr mange familievennlige aktiviteter som barn vil elske!",
+    followUp: "activity_type"
   },  
 ];
 
