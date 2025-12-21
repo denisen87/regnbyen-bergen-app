@@ -52,9 +52,6 @@ const knowledge = [
   { keywords: ["hvor ligger dere", "adresse", "lokasjon"],
     answer: "Regnbyen ligger i Bergen sentrum, nær Bryggen."
   },
-  { keywords: ["mat", "restaurant", "kafe", "spise"],
-    answer: "Vi har en kafé som serverer deilige retter og drikker, perfekt for en regnfull dag."
-  },
   { keywords: ["butikk", "souvenirer", "gaver"],
     answer: "Vår butikk tilbyr unike regnrelaterte suvenirer og gaver."
   },
