@@ -131,7 +131,7 @@ const knowledge = [
   },
 {
   keywords: ["matvalg", "vegetarisk", "vegan", "kafé"],
-  getAnswer: (text) => {
+  Answer: (text) => {
     if (text.includes("vegetarisk") || (text.includes("vegan") && text.includes("mat ") && !text.includes("hvilken"))) {
       return "Vår kafé tilbyr et bredt utvalg av vegetariske og veganske retter.";
     }
@@ -139,7 +139,7 @@ const knowledge = [
   }
 },
 { keywords: ["mat", "restaurant", "kafe", "spise"],
-  getAnswer: (text) => {
+  Answer: (text) => {
     if (text.includes("vegetarisk") || (text.includes("vegan") && text.includes("mat ") && !text.includes("hvilken"))) {
       return "Vår kafé tilbyr et bredt utvalg av vegetariske og veganske retter.";
     }
