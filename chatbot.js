@@ -207,7 +207,7 @@ function handleMode(text) {
     return "Svar gjerne 'ja' eller 'nei' 🙂";
   }
 
-  if (state.mode === "clothes_budget") {
+  if (state.mode === "clothing_tips") {
     state.mode = null;
     if (text.includes("billig")) {
       return "Billig-tips: regnbukse + rimelig skalljakke + ull innerst. Fokus: vanntett og vindtett.";
@@ -221,22 +221,23 @@ function handleMode(text) {
   if (state.mode === "activity_type") {
     state.mode = null;
     if (text.includes("inn")) return "Innendørs: VilVite, museum, kino, escape room, kafeer.";
-    if (text.includes("ute") || text.includes("utendørs")) return "Utendørs: tur i regntøy, Fløyen/Byfjellene – men sjekk vind + nedbør først."{
-   }
+    if (text.includes("ute") || text.includes("utendørs"))
+      return "Utendørs: tur i regntøy, Fløyen/Byfjellene – men sjekk vind + nedbør først.";
     return "Vil du ha 'innendørs' eller 'utendørs'? 🙂";
-  return null;
   }
-
 
   if (state.mode === "clothes_info") {
-  state.mode = null;
-
-  if (text.includes("hvor") || text.includes("kjøpe")) {
-    return "Du kan kjøpe regnklær i sportsbutikker, på nett eller i Regnbyen-butikken.";
+    state.mode = null;
+    if (text.includes("hvor") || text.includes("kjøpe")) {
+      return "Du kan kjøpe regnklær i sportsbutikker (XXL/Intersport), på nett, eller i Regnbyen-butikken.";
+    }
+    return "Vil du vite *hvor* du kan kjøpe regnklær, eller *hva* du bør velge? 🙂";
   }
+
+  return null;
 }
 
-}
+
 
 /**
  * 6) KOMMANDOER
