@@ -221,11 +221,21 @@ function handleMode(text) {
   if (state.mode === "activity_type") {
     state.mode = null;
     if (text.includes("inn")) return "Innendørs: VilVite, museum, kino, escape room, kafeer.";
-    if (text.includes("ute") || text.includes("utendørs")) return "Utendørs: tur i regntøy, Fløyen/Byfjellene – men sjekk vind + nedbør først.";
+    if (text.includes("ute") || text.includes("utendørs")) return "Utendørs: tur i regntøy, Fløyen/Byfjellene – men sjekk vind + nedbør først."{
+   }
     return "Vil du ha 'innendørs' eller 'utendørs'? 🙂";
+  return null;
   }
 
-  return null;
+
+  if (state.mode === "clothes_info") {
+  state.mode = null;
+
+  if (text.includes("hvor") || text.includes("kjøpe")) {
+    return "Du kan kjøpe regnklær i sportsbutikker, på nett eller i Regnbyen-butikken.";
+  }
+}
+
 }
 
 /**
