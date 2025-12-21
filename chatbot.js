@@ -268,9 +268,14 @@ function getAnswer(userText) {
   if (match.followUp) state.mode = match.followUp;
 
   // støtte for answer som funksjon senere
-  if (typeof match.answer === "function") return match.answer(text);
+// 1) Hvis regelen har getAnswer-funksjon
+if (typeof match.getAnswer === "function") return match.getAnswer(text);
 
-  return match.answer;
+// 2) Hvis regelen har answer-felt
+if (typeof match.answer === "function") return match.answer(text);
+
+return match.answer;
+
 }
 
 /**
