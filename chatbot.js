@@ -131,7 +131,16 @@ const knowledge = [
   { keywords: ["familieaktiviteter", "barn", "familie"],
     answer: "Regnbyen tilbyr mange familievennlige aktiviteter som barn vil elske!",
     followUp: "activity_type"
-  },  
+  },
+{
+  keywords: ["matvalg", "vegetarisk", "vegan", "kafé"],
+  getAnswer: (text) => {
+    if (text.includes("vegetarisk") || (text.includes("vegan") && text.includes("mat"))) {
+      return "Vår kafé tilbyr et bredt utvalg av vegetariske og veganske retter.";
+    }
+    return "Vår kafé tilbyr deilige retter og drikker for alle smaker.";
+  }
+}
 ];
 
 /**
