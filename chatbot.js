@@ -135,7 +135,7 @@ const knowledge = [
 {
   keywords: ["matvalg", "vegetarisk", "vegan", "kafé"],
   getAnswer: (text) => {
-    if (text.includes("vegetarisk") || (text.includes("vegan") && text.includes("mat"))) {
+    if (text.includes("vegetarisk") || (text.includes("vegan") && text.includes("mat ") && !text.includes("hvilken"))) {
       return "Vår kafé tilbyr et bredt utvalg av vegetariske og veganske retter.";
     }
     return "Vår kafé tilbyr deilige retter og drikker for alle smaker.";
