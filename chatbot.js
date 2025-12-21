@@ -137,7 +137,15 @@ const knowledge = [
     }
     return "Vår kafé tilbyr deilige retter og drikker for alle smaker.";
   }
-}
+},
+{ keywords: ["mat", "restaurant", "kafe", "spise"],
+  getAnswer: (text) => {
+    if (text.includes("vegetarisk") || (text.includes("vegan") && text.includes("mat ") && !text.includes("hvilken"))) {
+      return "Vår kafé tilbyr et bredt utvalg av vegetariske og veganske retter.";
+    }
+    return "Vår kafé tilbyr deilige retter og drikker for alle smaker.";
+  }
+},
 ];
 
 /**
